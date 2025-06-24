@@ -1,5 +1,3 @@
-# core/ponto_voo.py
-
 import random
 
 class PontoDeVoo:
@@ -24,3 +22,18 @@ class PontoDeVoo:
 
     def __str__(self):
         return f"Ponto({self.coordenadas}, {self.tipo_area}, Poluição: {self.poluicao_ar:.2f})"
+
+    def categoria_poluicao(self):
+        p = self.poluicao_ar
+        if p <= 50:
+            return "Ótima", "#00FF00"
+        elif p <= 100:
+            return "Moderada", "#FFFF00"
+        elif p <= 150:
+            return "Insalubre (sensíveis)", "#FFA500"
+        elif p <= 200:
+            return "Insalubre", "#FF0000"
+        elif p <= 300:
+            return "Muito insalubre", "#800080"
+        else:
+            return "Perigosa", "#8B0000"
